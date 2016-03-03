@@ -1,0 +1,15 @@
+Pratice Query In Hue:
+--------------------
+
+SEARCH SINGLE COLUMN:
+'+10{SingleColumnValueFilter('train', 'source Station Name', =, 'binaryprefix:BHUBANESWAR')}
+
+SEARCH SINGLE COLUMN WITH 
+'+10{SingleColumnValueFilter('train', 'source Station Name', =, 'binaryprefix:BHUBANESWAR') AND SingleColumnValueFilter('train', 'Destination Station Name', =, 'binaryprefix:HOWRAH JN')}
+
+SEARCH SINGLE COLUMN WITH 
+'+10{SingleColumnValueFilter('train', 'source Station Name', =, 'binaryprefix:BHUBANESWAR') OR SingleColumnValueFilter('train', 'Destination Station Name', =, 'binaryprefix:HOWRAH JN')}
+
+SEARCH SINGLE COLUMN: Not Working
+'+10{SingleColumnValueFilter('train', 'Distance', >, '1000')}
+
