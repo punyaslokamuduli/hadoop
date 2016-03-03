@@ -1,2 +1,3 @@
 HBASE
 -----
+Pratice the query.

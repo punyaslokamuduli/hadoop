@@ -18,4 +18,4 @@ Pratice Query In HBase Shell:
 ----------------------------
 scan 'demo_table',{ FILTER => "KeyOnlyFilter()"}
 
-scan 'indianrail' ,{ FILTER => "SingleColumnValueFilter('train','source Station Name',=, 'binaryprefix:BHUBANESWAR')" } 
+scan 'IndianRail' ,{ FILTER => "SingleColumnValueFilter('train','source Station Name',=, 'binaryprefix:BHUBANESWAR')" } 
