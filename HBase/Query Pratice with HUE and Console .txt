@@ -13,3 +13,9 @@ SEARCH SINGLE COLUMN WITH
 SEARCH SINGLE COLUMN: Not Working
 '+10{SingleColumnValueFilter('train', 'Distance', >, '1000')}
 
+
+Pratice Query In HBase Shell:
+----------------------------
+scan 'demo_table',{ FILTER => "KeyOnlyFilter()"}
+
+scan 'indianrail' ,{ FILTER => "SingleColumnValueFilter('train','source Station Name',=, 'binaryprefix:BHUBANESWAR')" } 
