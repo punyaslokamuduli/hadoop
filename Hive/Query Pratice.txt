@@ -1,0 +1,74 @@
+Hive Query Pratice:
+-------------------
+1. Create Query:
+---------------
+create table agricultureofindia(
+Particulars string,
+Frequency string,
+Unit string, 
+YR1993 double, 
+YR1994 double, 
+YR1995 double, 
+YR1996 double, 
+YR1997 double, 
+YR1998 double, 
+YR1999 double, 
+YR2000 double, 
+YR2001 double, 
+YR2002 double, 
+YR2003 double, 
+YR2004 double, 
+YR2005 double, 
+YR2006 double, 
+YR2007 double, 
+YR2008 double, 
+YR2009 double, 
+YR2010 double, 
+YR2011 double, 
+YR2012 double, 
+YR2013 double, 
+YR2014 double
+)
+ROW FORMAT
+DELIMITED FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n' STORED AS TEXTFILE LOCATION '/home/hivetable/agriculture';
+
+-------------------------Not Use--------------------------------------------------
+create table financial_planning(
+category_of_major_heads_of_development string,
+major_heads_of_development string,
+tenth_plan_2002_07_projected_outlay bigint,
+annual_plan_2002_03_approved_outlay double,
+annual_plan_2002_03_revised_outlay bigint,
+annual_plan_2002_03_actual_expenditure double,
+annual_plan_2003_04_approved_outlay bigint,
+annual_plan_2003_04_revised_outlay double,
+annual_plan_2003_04_actual_expenditure double,
+annual_plan_2004_05_approved_outlay double,
+annual_plan_2004_05_revised_outlay double,
+annual_plan_2004_05_actual_expenditure double,
+annual_plan_2005_06_approved_outlay double,
+annual_plan_2005_06_revised_outlay double,
+annual_plan_2005_06_actual_expenditure double,
+annual_plan_2006_07_approved_outlay double,
+annual_plan_2006_07_revised_outlay double,
+annual_plan_2006_07_actual_expenditure double
+)
+ROW FORMAT
+DELIMITED FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n' STORED AS TEXTFILE LOCATION '/home/hivetable/finance';
+-----------------------------Not Use--------------------------------------------------
+
+2. Select Query:
+---------------
+a. select * from agricultureofindia;
+
+b. select * from agricultureofindia limit 10;
+
+c. select particulars, frequency ,unit,yr2014  from agricultureofindia where yr2014 > 100;
+
+3. Group By:
+-----------
+SELECT * FROM agricultureofindia order by agricultureofindia.particulars;
+
+

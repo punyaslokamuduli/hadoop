@@ -1,0 +1,17 @@
+Hive - HBase Integration
+------------------------
+
+Hive Editor > Query Editor 
+
+Step 1 : Settings
+Key : hbase.zookeeper.quorum
+Value : 192.168.39.153
+
+Step 2:
+
+CREATE EXTERNAL TABLE IndianRail(train_no string,train_name string,islno int,station_code string,station_name string,arrival_time timestamp,departure_time timestamp,distance int,source_station_code string,source_station_name string,destination_station_code string,destination_station_name string) 
+STORED BY 'org.apache.hadoop.hive.hbase.HBaseStorageHandler'
+WITH SERDEPROPERTIES ("hbase.columns.mapping" = "train:train Name,train:islno,train:station Code,train:Station Name,train:Arrival time,train:Departure time,train:Distance,train:Source Station Code,train:source Station Name,train:Destination station Code,train:Destination Station Name")
+TBLPROPERTIES("hbase.table.name" = "IndianRail", "hbase.mapred.output.outputtable" = "IndianRail");
+
+*Note: timestamp column data cant't fetch above query. If it is replace by string working fine and fech the data. Given dataset is '12:09:32' -> string
