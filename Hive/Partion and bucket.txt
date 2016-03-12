@@ -1,0 +1,43 @@
+create external table financial_planning(
+category_of_major_heads_of_development string,
+major_heads_of_development string,
+tenth_plan_2002_07_projected_outlay bigint,
+annual_plan_2002_03_approved_outlay double,
+annual_plan_2002_03_revised_outlay bigint,
+annual_plan_2002_03_actual_expenditure double,
+annual_plan_2003_04_approved_outlay bigint,
+annual_plan_2003_04_revised_outlay double,
+annual_plan_2003_04_actual_expenditure double,
+annual_plan_2004_05_approved_outlay double,
+annual_plan_2004_05_revised_outlay double,
+annual_plan_2004_05_actual_expenditure double,
+annual_plan_2005_06_approved_outlay double,
+annual_plan_2005_06_revised_outlay double,
+annual_plan_2005_06_actual_expenditure double,
+annual_plan_2006_07_approved_outlay double,
+annual_plan_2006_07_revised_outlay double,
+annual_plan_2006_07_actual_expenditure double
+)PARTITIONED  BY (
+    state string
+)
+CLUSTERED BY (category_of_major_heads_of_development) INTO 25 BUCKETS
+ROW FORMAT
+DELIMITED FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n' STORED AS TEXTFILE LOCATION '/user/cloudera/hivepratice/tenthplan';
+
+--------------------------------------------------------------------------------------------
+set hive.enforce.bucketing = true
+
+---------------------------------------------------------------------------------------------
+ALTER TABLE financial_planning ADD PARTITION (state='andhra pradesh') location '/user/cloudera/hivepratice/tenthplan';
+ALTER TABLE financial_planning ADD PARTITION (state='bihar') location '/user/cloudera/hivepratice/tenthplan';
+ALTER TABLE financial_planning ADD PARTITION (state='chandigarh');
+ALTER TABLE financial_planning ADD PARTITION (state='goa');
+
+
+
+LOAD DATA INPATH '/dataset/tenthplan/Tenth_Plan_FP_Chandigarh.csv' INTO TABLE `default`.`financial_planning` PARTITION (state='chandigarh')
+LOAD DATA INPATH '/dataset/tenthplan/Tenth_Plan_FP_Andhra_Pradesh.csv' INTO TABLE `default`.`financial_planning` PARTITION (state='andhra pradesh');
+LOAD DATA INPATH '/dataset/tenthplan/Tenth_Plan_FP_Bihar.csv' INTO TABLE `default`.`financial_planning` PARTITION (state='bihar');
+
+
