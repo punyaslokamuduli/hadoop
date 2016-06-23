@@ -1,0 +1,20 @@
+ Filter filter = new PrefixFilter(Bytes.toBytes("row-1"));
+
+Scan scan = new Scan();
+scan.setFilter(filter);
+ResultScanner scanner = table.getScanner(scan);
+for (Result result : scanner) {
+  for (KeyValue kv : result.raw()) {
+ System.out.println("KV: " + kv + ", Value: " +
+ Bytes.toString(kv.getValue()));
+ }
+  }
+scanner.close();
+
+ Get get = new Get(Bytes.toBytes("row-5"));
+ get.setFilter(filter);
+ Result result = table.get(get);
+ for (KeyValue kv : result.raw()) {
+System.out.println("KV: " + kv + ", Value: " +
+Bytes.toString(kv.getValue()));
+  }
