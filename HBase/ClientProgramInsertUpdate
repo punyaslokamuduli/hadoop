@@ -13,7 +13,7 @@ public class ClientProgram{
  /* Driver Properties : 
 ---------------------- */
 // Instantiating configuration object
-Configuration hConf = HBaseConfiguration.create(conf);
+Configuration hConf = HBaseConfiguration.create();
 hConf.set("hbase.zookeeper.quorum","IP");
 hconf.setInt("hbase.zookeeper.property.clientPort","portno");
 
