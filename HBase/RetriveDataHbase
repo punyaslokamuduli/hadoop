@@ -14,7 +14,7 @@ public static void main(String[] args) throws IOException, Exception{
  /* Driver Properties : 
 ---------------------- */
 // Instantiating configuration object
-Configuration hConf = HBaseConfiguration.create(conf);
+Configuration hConf = HBaseConfiguration.create();
 hConf.set("hbase.zookeeper.quorum","IP");
 hconf.setInt("hbase.zookeeper.property.clientPort","portno");
 
