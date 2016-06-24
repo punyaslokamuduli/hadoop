@@ -31,28 +31,28 @@ To use cost-based optimization (also known as CBO), set the following parameters
 >set hive.stats.fetch.column.stats=true;
 >set hive.stats.fetch.partition.stats=true;
 
-TECHNIQUE #5: WRITE GOOD SQL
----------------------------
-Consider a click-stream event table:
+TECHNIQUE #5: Avoid Global Sorting in Hive
+------------------------------------------
+Clause but this comes with a drawback. ORDER BY produces a result by setting the number of reducers to one, making it very inefficient for large datasets.
+When a globally sorted result is not required, then we can use SORT BY clause. SORT BY produces a sorted file per reducer.
+If we need to control which reducer a particular row goes to, we can use DISTRIBUTE BY clause, for example, 
 
->CREATE TABLE clicks (
-timestamp date, sessionID string, url string, source_ip string
-) STORED as ORC tblproperties (“orc.compress” = “SNAPPY”);
+>SELECT id, name, salary, dept FROM employee
+DISTRIBUTE BY dept
+SORT BY id ASC, name DESC;
 
-Each record represents a click event, and we would like to find the latest URL for each sessionID.
+Each dept  will be processed separately by a reducer and records will be sorted by id and name fields within each dept separately.
 
->SELECT clicks.* FROM clicks inner join
-(select sessionID, max(timestamp) as max_ts from clicks
-group by sessionID) latest
-ON clicks.sessionID = latest.sessionID and
-clicks.timestamp = latest.max_ts;
+TECHNIQUE #6: Optimize LIMIT operator
+------------------------------------
+By default LIMIT operator still executes the entire query, then only returns a limited results. Because this behavior is generally wasteful, it can be avoided by setting below properties.
+>hive.limit.optimize.enable=true
+>hive.limit.row.max.size=100000
+>hive.limit.optimize.limit.file=10
 
-In the above query, we build a sub-query to collect the timestamp of the latest event in each session, and then use an inner join to filter out the rest.
+TECHNIQUE #7: Enable Mapreduce Strict Mode
+-----------------------------------------
+we can enable mapreduce strict mode by setting below property to strict.
 
-While the query is a reasonable solution—from a functional point of view—it turns out there’s a better way to re-write this query as follows:
+>hive.mapred.mode = nonstrict
 
->SELECT * FROM
-(SELECT *, RANK() over (partition by sessionID,order by timestamp desc) as rank FROM clicks) ranked_clicks
-WHERE ranked_clicks.rank=1;
-
-Here we use Hive’s OLAP functionality (OVER and RANK) to achieve the same thing, but without a Join.
