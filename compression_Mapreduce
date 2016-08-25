@@ -1,0 +1,28 @@
+With MR2, now we should set
+
+conf.set("mapreduce.map.output.compress", true)
+conf.set("mapreduce.output.fileoutputformat.compress", false)
+conf.set("mapred.map.output.compression.codec", "org.apache.hadoop.io.compress.GzipCodec"); 
+
+-----
+This will produce a gzipped output:
+
+hadoop jar /home/user/hadoop/path_to_jar/hadoop-streaming-1.0.0.jar \
+    -D mapred.output.compress=true \
+    -D mapred.output.compression.codec=org.apache.hadoop.io.compress.GzipCodec \
+    -D mapreduce.job.reduces=0 \
+    -mapper /bin/cat \
+    -input /user/hadoop/test/input/test.txt \
+    -output /user/hadoop/test/output
+A block-compressed SequenceFile as output:
+
+hadoop jar /home/user/hadoop/path_to_jar/hadoop-streaming-1.0.0.jar \
+    -D mapred.output.compress=true \
+    -D mapred.output.compression.type=BLOCK \
+    -D mapred.output.compression.codec=org.apache.hadoop.io.compress.GzipCodec \
+    -D mapreduce.job.reduces=0 \
+    -mapper /bin/cat \
+    -input /user/hadoop/test/input/test.txt \
+    -output /user/hadoop/test/output
+    -outputformat org.apache.hadoop.mapred.SequenceFileOutputFormat
+Note the order of the parameters as well as the space between -D and the property name.
