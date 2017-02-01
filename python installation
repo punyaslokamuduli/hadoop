@@ -1,4 +1,14 @@
 python vrsion 2.7 recommendable
+------------------------------
+1.[Right Click]Computer > Properties >Advanced System Settings > Environment Variables
+2.Click [New] under "System Variable"
+3.Variable Name: PY_HOME, Variable Value:C:\path\to\python\version
+4.Click [OK]
+5.Locate the "Path" System variable and click [Edit]
+6.Add the following to the existing variable:
+7.%PY_HOME%;%PY_HOME%\Lib;%PY_HOME%\DLLs;%PY_HOME%\Lib\lib-tk; 
+8.Click [OK] to close all of the windows.
+--------------------------------
 
 python -m pip install -U pip
 
