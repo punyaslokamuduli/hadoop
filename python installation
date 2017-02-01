@@ -1,0 +1,34 @@
+python vrsion 2.7 recommendable
+
+python -m pip install -U pip
+
+python -m pip install snakebite
+
+python -m pip install jupyter
+
+python -m pip install ipyparallel
+
+python -m pip install --pre toree //only for linux windows skipp it
+
+python -m pip install pexpect
+
+python -m pip install -U numpy
+
+python -m pip install -U pandas
+
+python -m pip install -U scikit-learn
+
+python -m pip install -U mysqlclient
+
+python -m pip install -U sqlalchemy
+
+https://github.com/ipython/ipyparallel
+
+jupyter console --KernelManager.kernel_cmd='["java", "-jar", "IScala.jar", "--parent"]' -f profile-13276.json
+
+>python -m ipykernel install --name Scala --profile Scala
+
+java -jar IScala.jar
+connect ipython with --existing F:\spark\projects\IScala-0.1\IScala-0.1\lib\profile-13276.json
+
+jupyter kernelspec list
