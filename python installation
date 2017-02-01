@@ -42,3 +42,140 @@ java -jar IScala.jar
 connect ipython with --existing F:\spark\projects\IScala-0.1\IScala-0.1\lib\profile-13276.json
 
 jupyter kernelspec list
+------------------------
+==========================
+C:\Users\muduli>python -m pip install jupyter
+Collecting jupyter
+  Using cached jupyter-1.0.0-py2.py3-none-any.whl
+Collecting ipykernel (from jupyter)
+  Using cached ipykernel-4.5.2-py2.py3-none-any.whl
+Collecting jupyter-console (from jupyter)
+  Using cached jupyter_console-5.0.0-py2.py3-none-any.whl
+Collecting ipywidgets (from jupyter)
+  Using cached ipywidgets-5.2.2-py2.py3-none-any.whl
+Collecting nbconvert (from jupyter)
+  Using cached nbconvert-5.1.1-py2.py3-none-any.whl
+Collecting notebook (from jupyter)
+  Using cached notebook-4.3.2-py2.py3-none-any.whl
+Collecting qtconsole (from jupyter)
+  Using cached qtconsole-4.2.1-py2.py3-none-any.whl
+Requirement already satisfied: tornado>=4.0 in c:\python27\lib\site-packages (fr
+om ipykernel->jupyter)
+Requirement already satisfied: jupyter-client in c:\python27\lib\site-packages (
+from ipykernel->jupyter)
+Collecting ipython>=4.0.0 (from ipykernel->jupyter)
+  Using cached ipython-5.2.1-py2-none-any.whl
+Requirement already satisfied: traitlets>=4.1.0 in c:\python27\lib\site-packages
+ (from ipykernel->jupyter)
+Collecting prompt-toolkit<2.0.0,>=1.0.0 (from jupyter-console->jupyter)
+  Using cached prompt_toolkit-1.0.10-py2-none-any.whl
+Collecting pygments (from jupyter-console->jupyter)
+  Using cached Pygments-2.2.0-py2.py3-none-any.whl
+Collecting widgetsnbextension>=1.2.6 (from ipywidgets->jupyter)
+  Using cached widgetsnbextension-1.2.6-py2.py3-none-any.whl
+Collecting testpath (from nbconvert->jupyter)
+  Using cached testpath-0.3-py2.py3-none-any.whl
+Collecting pandocfilters>=1.4.1 (from nbconvert->jupyter)
+  Using cached pandocfilters-1.4.1.tar.gz
+Collecting jinja2 (from nbconvert->jupyter)
+  Using cached Jinja2-2.9.5-py2.py3-none-any.whl
+Requirement already satisfied: jupyter-core in c:\python27\lib\site-packages (fr
+om nbconvert->jupyter)
+Collecting bleach (from nbconvert->jupyter)
+  Using cached bleach-1.5.0-py2.py3-none-any.whl
+Collecting mistune!=0.6 (from nbconvert->jupyter)
+  Using cached mistune-0.7.3-py2.py3-none-any.whl
+Collecting nbformat (from nbconvert->jupyter)
+  Using cached nbformat-4.2.0-py2.py3-none-any.whl
+Collecting entrypoints>=0.2.2 (from nbconvert->jupyter)
+  Using cached entrypoints-0.2.2-py2.py3-none-any.whl
+Requirement already satisfied: ipython-genutils in c:\python27\lib\site-packages
+ (from notebook->jupyter)
+Requirement already satisfied: singledispatch in c:\python27\lib\site-packages (
+from tornado>=4.0->ipykernel->jupyter)
+Requirement already satisfied: certifi in c:\python27\lib\site-packages (from to
+rnado>=4.0->ipykernel->jupyter)
+Requirement already satisfied: backports_abc>=0.4 in c:\python27\lib\site-packag
+es (from tornado>=4.0->ipykernel->jupyter)
+Requirement already satisfied: pyzmq>=13 in c:\python27\lib\site-packages (from
+jupyter-client->ipykernel->jupyter)
+Collecting pickleshare (from ipython>=4.0.0->ipykernel->jupyter)
+  Using cached pickleshare-0.7.4-py2.py3-none-any.whl
+Requirement already satisfied: decorator in c:\python27\lib\site-packages (from
+ipython>=4.0.0->ipykernel->jupyter)
+Collecting win-unicode-console>=0.5; sys_platform == "win32" and python_version
+< "3.6" (from ipython>=4.0.0->ipykernel->jupyter)
+  Using cached win_unicode_console-0.5.zip
+Collecting backports.shutil-get-terminal-size; python_version == "2.7" (from ipy
+thon>=4.0.0->ipykernel->jupyter)
+  Using cached backports.shutil_get_terminal_size-1.0.0-py2.py3-none-any.whl
+Requirement already satisfied: setuptools>=18.5 in c:\python27\lib\site-packages
+ (from ipython>=4.0.0->ipykernel->jupyter)
+Collecting pathlib2; python_version == "2.7" or python_version == "3.3" (from ip
+ython>=4.0.0->ipykernel->jupyter)
+  Using cached pathlib2-2.2.1-py2.py3-none-any.whl
+Collecting simplegeneric>0.8 (from ipython>=4.0.0->ipykernel->jupyter)
+  Using cached simplegeneric-0.8.1.zip
+Collecting colorama; sys_platform == "win32" (from ipython>=4.0.0->ipykernel->ju
+pyter)
+  Using cached colorama-0.3.7-py2.py3-none-any.whl
+Requirement already satisfied: enum34; python_version == "2.7" in c:\python27\li
+b\site-packages (from traitlets>=4.1.0->ipykernel->jupyter)
+Requirement already satisfied: six in c:\python27\lib\site-packages (from traitl
+ets>=4.1.0->ipykernel->jupyter)
+Collecting wcwidth (from prompt-toolkit<2.0.0,>=1.0.0->jupyter-console->jupyter)
+
+  Using cached wcwidth-0.1.7-py2.py3-none-any.whl
+Collecting MarkupSafe>=0.23 (from jinja2->nbconvert->jupyter)
+  Using cached MarkupSafe-0.23.tar.gz
+Collecting html5lib!=0.9999,!=0.99999,<0.99999999,>=0.999 (from bleach->nbconver
+t->jupyter)
+  Using cached html5lib-0.9999999.tar.gz
+Collecting jsonschema!=2.5.0,>=2.4 (from nbformat->nbconvert->jupyter)
+  Using cached jsonschema-2.5.1-py2.py3-none-any.whl
+Collecting configparser>=3.5; python_version == "2.7" (from entrypoints>=0.2.2->
+nbconvert->jupyter)
+  Using cached configparser-3.5.0.tar.gz
+Collecting scandir; python_version < "3.5" (from pathlib2; python_version == "2.
+7" or python_version == "3.3"->ipython>=4.0.0->ipykernel->jupyter)
+  Using cached scandir-1.4.zip
+Collecting functools32; python_version == "2.7" (from jsonschema!=2.5.0,>=2.4->n
+bformat->nbconvert->jupyter)
+  Using cached functools32-3.2.3-2.zip
+Installing collected packages: scandir, pathlib2, pickleshare, wcwidth, prompt-t
+oolkit, win-unicode-console, backports.shutil-get-terminal-size, pygments, simpl
+egeneric, colorama, ipython, ipykernel, jupyter-console, testpath, pandocfilters
+, MarkupSafe, jinja2, html5lib, bleach, mistune, functools32, jsonschema, nbform
+at, configparser, entrypoints, nbconvert, notebook, widgetsnbextension, ipywidge
+ts, qtconsole, jupyter
+  Running setup.py install for scandir ... error
+    Complete output from command C:\Python27\python.exe -u -c "import setuptools
+, tokenize;__file__='c:\\users\\muduli\\appdata\\local\\temp\\pip-build-yii9v2\\
+scandir\\setup.py';f=getattr(tokenize, 'open', open)(__file__);code=f.read().rep
+lace('\r\n', '\n');f.close();exec(compile(code, __file__, 'exec'))" install --re
+cord c:\users\muduli\appdata\local\temp\pip-m9e47z-record\install-record.txt --s
+ingle-version-externally-managed --compile:
+    running install
+    running build
+    running build_py
+    creating build
+    creating build\lib.win32-2.7
+    copying scandir.py -> build\lib.win32-2.7
+    running build_ext
+    building '_scandir' extension
+    error: Microsoft Visual C++ 9.0 is required. Get it from http://aka.ms/vcpyt
+hon27
+
+    ----------------------------------------
+Command "C:\Python27\python.exe -u -c "import setuptools, tokenize;__file__='c:\
+\users\\muduli\\appdata\\local\\temp\\pip-build-yii9v2\\scandir\\setup.py';f=get
+attr(tokenize, 'open', open)(__file__);code=f.read().replace('\r\n', '\n');f.clo
+se();exec(compile(code, __file__, 'exec'))" install --record c:\users\muduli\app
+data\local\temp\pip-m9e47z-record\install-record.txt --single-version-externally
+-managed --compile" failed with error code 1 in c:\users\muduli\appdata\local\te
+mp\pip-build-yii9v2\scandir\
+
+C:\Users\muduli>cd \
+
+C:\>
+
