@@ -7,7 +7,7 @@ Microsoft Visual C++ Compiler for Python 2.7 Need to install
 4.Click [OK]
 5.Locate the "Path" System variable and click [Edit]
 6.Add the following to the existing variable:
-7.%PY_HOME%;%PY_HOME%\Lib;%PY_HOME%\DLLs;%PY_HOME%\Lib\lib-tk; 
+7.%PY_HOME%;%PY_HOME%\Lib;%PY_HOME%\Scripts;%PY_HOME%\DLLs;%PY_HOME%\Lib\lib-tk; 
 8.Click [OK] to close all of the windows.
 --------------------------------
 
